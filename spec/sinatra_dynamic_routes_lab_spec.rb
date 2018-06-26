@@ -1,9 +1,10 @@
 describe App do
   describe 'GET /reversename/:name' do
     it 'sends a 200 status code' do
-      get '/reversename/victoria'
-
-      expect(last_response.status).to eq(200)
+      get '/reversename/victoria' do
+        @name = params[:victoria:]
+        victoria.reverse
+        expect(last_response.status).to eq(200)
     end
 
     it 'renders the name backwards' do
